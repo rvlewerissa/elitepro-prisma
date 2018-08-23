@@ -1,0 +1,39 @@
+{
+  "name": "elitepro-prisma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec 'babel-node' src/index.js",
+    "playground": "graphql playground",
+    "dev": "npm-run-all --parallel start playground",
+    "lint": "eslint src/ --max-warnings 0",
+    "typecheck": "flowtype src/"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.6",
+    "dotenv": "^6.0.0",
+    "graphql-import": "^0.6.0",
+    "graphql-tools": "^3.1.1",
+    "graphql-yoga": "^1.16.1",
+    "jsonwebtoken": "^8.3.0",
+    "prisma-binding": "^2.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "flow-bin": "^0.79.1",
+    "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  }
+}

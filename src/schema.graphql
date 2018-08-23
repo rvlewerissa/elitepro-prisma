@@ -1,0 +1,14 @@
+# import User from '../prisma/generated/prisma.graphql'
+# import Role from '../prisma/generated/prisma.graphql'
+# import UserCreateInput from '../prisma/generated/prisma.graphql'
+
+directive @isAuthenticated on FIELD
+
+type Query {  
+  user(id: ID!): User
+  users: [User]!
+}
+
+type Mutation {
+  createUser(data: UserCreateInput!): User!
+}

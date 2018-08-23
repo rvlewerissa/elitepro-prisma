@@ -1,0 +1,94 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["flowtype"],
+  "env": {
+    "commonjs": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-debugger": "warn",
+
+    // Accessibility (eslint-plugin-jsx-a11y)
+    "jsx-a11y/href-no-hash": "off",
+
+    // Flow (eslint-plugin-flowtype)
+    "flowtype/delimiter-dangle": ["warn", "always-multiline"],
+    "flowtype/no-dupe-keys": "error",
+    "flowtype/object-type-delimiter": ["warn", "comma"],
+    "flowtype/semi": "warn",
+    "flowtype/type-id-match": ["warn", "^[A-Z]"],
+
+    // Node.js
+    "handle-callback-err": "warn",
+    "no-mixed-requires": "warn",
+    "no-new-require": "warn",
+    "no-path-concat": "warn",
+    "no-restricted-modules": "warn",
+
+    // Other
+    "camelcase": ["warn", {"properties": "never"}],
+    "consistent-this": ["warn", "self"],
+    "constructor-super": "warn",
+    "curly": "warn",
+    "eol-last": "warn",
+    "guard-for-in": "warn",
+    "no-catch-shadow": "warn",
+    "no-class-assign": "warn",
+    "no-constant-condition": "warn",
+    "no-extra-boolean-cast": "warn",
+    "no-floating-decimal": "warn",
+    "no-new": "warn",
+    "no-proto": "warn",
+    "no-return-assign": "warn",
+    "one-var": ["warn", "never"],
+    "prefer-arrow-callback": "warn",
+    "radix": "warn",
+    "yoda": "warn",
+
+    // Code Style
+    // The following rules are not neccessary when using Prettier, but we"re
+    // including them so automated tests can catch if Prettier is turned off.
+    "array-bracket-spacing": ["warn", "never"],
+    "arrow-parens": "warn",
+    "arrow-spacing": "warn",
+    "object-curly-spacing": ["warn", "never"],
+    "brace-style": ["warn", "1tbs", {"allowSingleLine": false}],
+    "comma-dangle": ["warn", "always-multiline"],
+    "comma-spacing": "warn",
+    // Disabling "indent" because it gets confused with JSX in some cases.
+    // "indent": ["warn", 2, {"SwitchCase": 1}],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "key-spacing": "warn",
+    "keyword-spacing": "warn",
+    "no-extra-parens": ["warn", "functions"],
+    "no-extra-semi": "warn",
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-multi-spaces": "warn",
+    "no-spaced-func": "warn",
+    "no-trailing-spaces": "warn",
+    "quotes": [
+      "warn",
+      "single",
+      {"avoidEscape": true, "allowTemplateLiterals": true}
+    ],
+    "semi-spacing": "warn",
+    "semi": "warn",
+    "space-before-blocks": "warn",
+    "space-before-function-paren": [
+      "warn",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "space-in-parens": "warn",
+    "space-infix-ops": "warn",
+    "space-unary-ops": "warn"
+  }
+}

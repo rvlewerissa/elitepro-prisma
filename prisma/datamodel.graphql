@@ -1,0 +1,71 @@
+type User @pgTable(name: "user") {
+  id: ID! @unique
+  name: String!
+  email: String!
+  password: String!
+  phone: String
+  address: String
+  role: Role!
+  companyName: String
+  companyWebsite: String
+  message: String
+  campaigns: [Campaign!]!
+  operators: [User!]! @relation(name: "AdminOperator")
+  admin: User @relation(name: "AdminOperator")
+}
+
+type Domain @pgTable(name: "domain") {
+  id: ID! @unique
+  domainName: String!
+}
+
+type Campaign @pgTable(name: "campaign") {
+  id: ID! @unique
+  campaignName: String!
+  domain: Domain!
+  link: Link!
+}
+
+type Link @pgTable(name: "link") {
+  id: ID! @unique
+  link: String!
+  weight: Int!
+}
+
+type Customer @pgTable(name: "customer") {
+  id: ID! @unique
+  customerName: String!
+  phone: String!
+  email: String
+  notes: String
+  address: String
+  status: Conversion_Status!
+  operator: User
+}
+
+type Pixel @pgTable(name: "pixel") {
+  id: ID! @unique
+  pixelType: Pixel_Type!
+  pixelName: String!
+  codeID: String!
+  eventName: String
+}
+
+enum Role {
+  SUPERADMIN,
+  ADMIN,
+  OPERATOR
+}
+
+enum Conversion_Status {
+  COMPLETED,
+  PENDING,
+  CANCELLED
+}
+
+enum Pixel_Type {
+  GOOGLE_ANALYTIC,
+  FACEBOOK,
+  GOOGLE_REMARKETING
+
+}
